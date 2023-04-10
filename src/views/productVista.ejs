@@ -1,0 +1,11 @@
+
+    <img class="foto-producto" src="/img/products/<%= producti.image %>" alt="">
+          <div class="caja-descripcion">
+              <div class="truck"><i class="fas fa-truck"></i></div>
+              <div class="precio-descuento">
+                  <p class="precio"><%= toThousand(producti.price)  %></p>
+                  <p class="descuento"><%= producti.discount %> OFF</p>
+              </div>
+              <h4 class="descripcion"><%= producti.name %></h4>
+          </div> <!-- prodicti es el nombre que le dimos para invoacr las lita de objetos, para poder hacerlo mas dinamico
+    e invocamos cada parte del objeto que deseamos por separado, se invoca en la pagina home -->

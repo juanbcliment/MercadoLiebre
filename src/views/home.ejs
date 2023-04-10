@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <%- include("./partials/headPartial.ejs") %> <!-- incova otra parte de un html aca, para poder repetir codigo -->
+  
+</head>
+
+<body class="body-home">
+  <header class="header-home">
+    <%- include('./partials/headerPartial.ejs') %>
+  </header>
+  <main class="main-home">
+
+    <h2 class="h2-titulo">Sección: Basado en su última visita</h2>
+    <section class="productos">
+      
+      <% for (product of productos1){ %><!-- productos 1 sale por el momento de mainController -->
+        <article class="article-productos">
+          <img class="foto-producto" src="/img/products/<%= product.image %>" alt="Cafetera Moulinex">
+          <div class="caja-descripcion">
+            <div class="truck"><i class="fas fa-truck"></i></div>
+            <div class="precio-descuento">
+              <p class="precio"><%= toThousand(product.price)  %></p>
+              <p class="descuento"><%= product.discount %> OFF</p>
+            </div>
+            <h4 class="descripcion"><%= product.name %></h4>
+          </div>
+        </article>
+        <% } %>
+        
+      </section>
+      <h2 class="h2-titulo">Sección de Ofertas</h2>
+      <section class="productos">
+        
+        <% for (producti of productos1){ %>
+          <article class="article-productos">
+            <%- include("./productVista.ejs", {producti})  %>
+          </article><!-- en los cochetes le mandamos los parametros que queremos para ese ejs -->
+          <% } %> <!-- para mostrar una lista de productos, creamos una ejs, con las visa de como queres que se vean los datos
+            en este casa procucti,  hacemos un ciclo ford invocando al array de objetos, que en este caso esta en main controller, pero proximamente en un mysql
+            que seria el productos1, y con el producti, es el  nombre que le dimos al objeto en del ejs de productosVista -->
+            
+            <br>
+            <br>
+            <br>
+          </section>
+        </main>
+
+  
+  <footer>
+    <%- include('./partials/footerPartial.ejs')  %>
+  </footer>
+</body>
+
+</html>

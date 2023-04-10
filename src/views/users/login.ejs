@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/headPartial.ejs", {title: 'Login'}) %> <!-- incova otra parte de un html aca, para poder repetir codigo -->
+</head>
+
+<body class="body-login">
+    <header class="header-home">
+        <%- include('../partials/headerPartial.ejs') %>
+    </header>
+    <main>
+        <form class="formFormulario" action="" method="POST" id="form">
+            <div class="form">
+                <h1 class="h1-login">Ingresar</h1>
+                <div class="grupo">
+                    <input class="inputForm" type="text" name="" id="name" required><span class="barra"></span>
+                    <label for="">Nombre o Email</label>
+                </div>
+                <div class="grupo">
+                    <input class="inputForm" type="password" name="" id="name" minlength="8" required><span
+                        class="barra"></span>
+                    <label for="">Contraseña</label>
+                </div>
+                <button class="boton-ingresar" type="submit">Ingresar</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <%- include('../partials/footerPartial.ejs')  %>
+    </footer>
+</body>
+
+</html>

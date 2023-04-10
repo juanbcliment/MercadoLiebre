@@ -1,0 +1,1030 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+/*letra roboto regular 400*/
+
+* {
+    margin: 0 px;
+    padding: 0 px;
+    box-sizing: border-box;
+}
+:root {
+    --yellow: #EAC926;
+    --dark-blue: #03264C;
+    --light-blue: #1259c3;
+    --gray: #666666;
+    --light-gray: #ebebeb;
+    --green: #39b54a;
+    --base-font-family: 'Roboto', sans-serif
+  }
+/*-----------------header----------------*/
+
+.body-home {
+    font-family: 'roboto';
+    margin: auto;
+    background-color: #ebebeb;
+    box-sizing: border-box;
+
+}
+
+.header-home {
+    margin: auto;
+    background-color: #EAC926;
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.text-center {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.text-center2 {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 40%;
+    margin: auto;
+    margin-right: 5px;
+}
+
+.navegacion {
+    display: none;
+}
+
+.burger-menu {
+    width: 40px;
+    height: 40px;
+    background-color: #1259c3;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 6px;
+}
+
+.burger-menu:hover .navegacion {
+    display: block;
+}
+
+.banner {
+    width: 100%;
+    height: 60px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+a {
+    color: #1c1c1b;
+}
+
+.buscador {
+    display: flex;
+    text-align: center;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    width: 55%;
+
+}
+
+.logo-buscador {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 2px;
+
+}
+
+/*-----------------main----------------*/
+.main-home {
+    width: 90%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.cuerpoTexto {
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.caja-descripcion {
+    border-top: 1px solid #ebebeb;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.h2-titulo {
+    padding: 10px;
+}
+
+.precio {
+    font-size: 20px;
+    padding-right: 10px;
+    transition: all 500ms;
+    margin: 0;
+}
+
+.descuento {
+    font-size: 18px;
+    color: #39b54a;
+    transition: all 500ms;
+}
+
+.article-productos {
+    margin-bottom: 10px;
+    border-top: solid 1px #ebebeb;
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    transition: all 350ms;
+    height: 400px;
+}
+
+.descripcion {
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 10px;
+    display: none;
+    transition: all 500ms;
+}
+
+.precio-descuento:hover~.descripcion {
+    display: flex;
+}
+
+.centrado {
+    width: 30%;
+    box-sizing: border-box;
+
+}
+
+.foto-producto {
+    width: 80%;
+    border-bottom: solid 1px #ebebeb;
+    margin-left: 10%;
+    box-sizing: border-box;
+}
+
+.truck {
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: relative;
+    color: #39b54a;
+    left: 80%;
+    bottom: 30px;
+    transition: all 500ms;
+}
+
+.truck:hover {
+    transform: rotate(-90deg);
+
+}
+
+.article-productos:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.precio-descuento {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 500ms;
+}
+
+/*==============================================================================================================================================================
+                                                             LOGIN
+================================================================================================================================================================== */
+:root {
+    --colorTextos: #49454567;
+}
+
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-login {
+    font-family: 'roboto';
+    margin: auto;
+    box-sizing: border-box;
+
+}
+
+.main-login {
+    width: 90%;
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1-login {
+    text-align: center;
+}
+
+.formFomulario {
+    padding: 40px 0;
+}
+
+.form {
+    width: 90%;
+    margin: auto;
+}
+
+.grupo {
+    position: relative;
+    margin: 20px auto;
+    right: 15px;
+}
+
+.inputForm {
+    background: white;
+    color: #c6c6c6;
+    display: block;
+    width: 300px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-bottom: 1px solid var(--colorTextos);
+    height: 30px;
+
+}
+
+.inputForm:focus {
+    outline: none;
+    color: #5e5d5d;
+}
+
+.label {
+    font-family: 'roboto';
+    color: var(--colorTextos);
+    font-size: 18px;
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    transition: 0.3s ease-in-out all;
+    pointer-events: none;
+    top: 4px;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -15px;
+    font-size: 12px;
+    color: #1259c3;
+}
+
+.barra {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.boton-ingresar {
+    display: flex;
+    font-family: 'roboto';
+    text-align: center;
+    background-color: #1259c3;
+    color: white;
+    border: none;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+    height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 80%;
+    transition: all 300ms;
+}
+
+.boton-ingresar:hover {
+    background-color: #0022AA;
+}
+
+.footerimg {
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    color: #1259c3;
+    margin: auto;
+    margin-bottom: 0px;
+    text-align: center;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.h2-footer {
+    margin-top: 2px;
+}
+
+/* ===============================================================================================================================
+                                                          CREA TU CUENTA
+ ==================================================================================================================================== */
+:root {
+    --colorTextos: #49454567;
+}
+
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'roboto';
+    margin: auto;
+    box-sizing: border-box;
+
+}
+
+main {
+    width: 90%;
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.boton-borrar {
+    display: flex;
+    font-family: 'roboto';
+    text-align: center;
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+    height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 60%;
+    transition: all 300ms;
+}
+
+.boton-borrar:hover {
+    background-color: red;
+}
+
+.footerimg {
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    color: #1259c3;
+    margin: auto;
+    margin-bottom: 0px;
+    text-align: center;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.h2-footer {
+    margin-top: 2px;
+}
+
+.grupo-check {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0px auto;
+    right: 15px;
+}
+
+/*====================================================================== 
+                                  Formularios 
+========================================================================*/
+
+.form-label {
+  display: inline-block;
+  font-size: 1.6em;
+  margin: 10px 0;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  border-radius: 8px;
+  border: none;
+  border: solid 1px var(--gray);
+  padding: 0 15px;
+}
+
+textarea.form-input {
+  min-height: 140px;
+  resize: vertical;
+  padding: 15px;
+}
+
+.body-detail {
+    font-family: var(--base-font-family);
+    font-weight: 300;
+    background-color: var(--light-gray);
+  }
+
+/*====== Products ======*/
+.products-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .products-title {
+    font-size: 2.4em;
+    font-weight: 400;
+    color: var(--gray);
+  }
+  
+  .product-box {
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 300ms;
+    margin: 20px 0;
+  }
+  
+  .product-box a {
+    display: block;
+  }
+  
+  .product-box_image {
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  .product-box_data {
+    padding: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .product-box_data h2 {
+    font-size: 2.4em;
+    font-weight: 300;
+    margin: 0;
+  }
+  
+  .product-box_data span {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: var(--green);
+    margin: 0 0 0 10px;
+  }
+  
+  .product-box_data p {
+    font-size: 1.5em;
+    width: 100%;
+    color: var(--gray);
+    margin: 0;
+    height: 0;
+    transition: 300ms;
+    overflow: hidden;
+  }
+  
+  .product-box_data i {
+    color: var(--green);
+    font-size: 1.8em;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border: solid 1px;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+  }
+  
+  .product-box:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .product-box:hover p {
+    height: 40px;
+    margin-top: 15px;
+  }
+  
+  .product-box:hover i {
+    transform: rotate(360deg);
+    box-shadow: 0 0 5px var(--green);
+  }
+
+  /*====== Product Detail ======*/
+.product-detail {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .product-detail-img {
+    width: 70%;
+    display: block;
+    margin: auto;
+  }
+  
+  .product-detail-info {
+    border-left: 1px solid var(--light-gray);
+    padding: 15px;
+    height: 100%;
+  }
+  
+  .product-detail-title {
+    font-weight: 400;
+    font-size: 2.8em;
+  }
+  
+  .product-detail-description {
+    padding: 15px;
+    font-size: 1.8em;
+    line-height: 1.5;
+  }
+  
+  .product-detail-price {
+    font-size: 5.5em;
+    margin: 10px 0;
+  }
+  
+  .small {
+    font-size: 1.8em;
+    color: var(--green);
+  }
+  
+  .small span {
+    text-decoration: line-through;
+  }
+  
+  .actions-list {
+    margin-bottom: 50px;
+  }
+  
+  .actions-list li {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px 0;
+  }
+  
+  .actions-list i {
+    color: var(--green);
+    font-size: 2em;
+    margin-right: 15px;
+  }
+  
+  .actions-list p {
+    color: var(--gray);
+    font-size: 1.7em;
+    margin: 0;
+  }
+  
+  .buy-now-button {
+    background-color: var(--light-blue);
+    font-size: 1.6em;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 15px;
+  }
+  
+  .action-button {
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    margin-top: 15px;
+  }
+  
+  .action-button.edit {
+    background-color: chocolate;
+  }
+  .action-button.delete {
+    background-color: rgb(248, 69, 37);
+  }
+  
+
+.body-detail {
+  min-height: 100vh;
+  margin: 0;
+  font-size: 10px;
+  font-family: var(--base-font-family);
+  font-weight: 300;
+  background-color: var(--light-gray);
+}
+
+
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+hr {
+  border: none;
+  border-bottom: solid 1px var(--light-gray);
+}
+
+
+/*====== Main Header ======*/
+.main-header {
+  padding: 15px 0;
+  background-color: var(--yellow);
+}
+
+.main-header_home-link,
+.main-header_credit-link {
+  display: block;
+}
+
+.main-header_credit-link {
+  font-size: 1.5em;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-form_input {
+  border: solid 1px var(--light-gray);
+  display: block;
+  width: 100%;
+  padding: 7px 35px 7px 7px;
+  border-radius: 3px;
+  height: 40px;
+  font-size: 1.5em;
+}
+
+.search-form_button {
+  position: absolute;
+  right: 2px;
+  height: 60%;
+  background-color: #ffffff;
+  border: none;
+  border-left: solid 1px var(--light-gray);
+  color: var(--gray);
+  cursor: pointer;
+}
+
+  /*====== Formularios ======*/
+  .form-label {
+    display: inline-block;
+    font-size: 1.6em;
+    margin: 10px 0;
+  }
+  
+  .form-input {
+    display: block;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    border: none;
+    border: solid 1px var(--gray);
+    padding: 0 15px;
+  }
+  
+  textarea.form-input {
+    min-height: 140px;
+    resize: vertical;
+    padding: 15px;
+  }
+
+
+/*=============================================================================================================================
+                                                                         FOOTER
+==============================================================================================================================*/
+footer {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 15px 0px;
+    box-sizing: border-box;
+    align-self: flex-end;
+}
+
+.footer-centrado {
+    margin: auto;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 24px;
+    box-sizing: border-box;
+}
+
+.footerimg {
+    font-size: 30px;
+    color: #1259c3;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    height: auto;
+    box-sizing: border-box;
+    transition: all 300ms;
+}
+
+.footerimg:hover {
+    color: #0022AA;
+    font-size: 40px;
+}
+
+.h2-footer {
+    margin-top: 2px;
+}
+
+
+
+
+
+
+
+
+
+/* ================================================================================================================================
+                                                              MEDIA QUERY
+ ======================================================================================================================================*/
+@media (min-width: 361px) {
+
+    .article-productos {
+        width: 45%;
+        margin-right: 10px;
+    }
+
+    .banner {
+        height: 110px;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .navegacion {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+
+    .text-center {
+        text-align: inherit;
+        margin-left: 16px;
+    }
+
+}
+
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none;
+    }
+
+    .article-productos {
+        width: 23%;
+        margin-right: 10px;
+    }
+
+    .banner {
+        height: 180px;
+    }
+
+    .precio {
+        font-size: 15px;
+    }
+
+    .descuento {
+        font-size: 20px;
+    }
+
+    .navegacion {
+        display: flex;
+
+        flex-direction: row;
+    }
+
+    .navegacion ul {
+        display: flex;
+        margin: auto;
+        flex-direction: row;
+        padding: 4px;
+    }
+
+    .navegacion ul li {
+        margin: 10px;
+        text-decoration: none;
+        list-style: none;
+
+    }
+
+    .navegacion ul li a {
+        text-decoration: none;
+        margin: 4px;
+        font-size: 15px;
+    }
+
+    header {
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    ul {
+        margin: 0 auto;
+    }
+
+    .logo-buscador {
+        display: flex;
+        margin: 1px auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    .buscador p input {
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .buscador p button {
+        font-size: 20px;
+        border-radius: 5px;
+
+    }
+
+    .logo {
+        display: flex;
+        text-align: center;
+        align-items: normal;
+        margin: 0 auto;
+        width: 30%;
+        margin: 0 auto;
+        margin-right: 6px;
+    }
+
+    .buscador {
+        width: 39%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0;
+    }
+
+    .text-center2 {
+        width: 30%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1055px) {
+    .burger-menu {
+        display: none;
+    }
+
+    .article-productos {
+        width: 23%;
+        margin-right: 10px;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+    .precio {
+        font-size: 20px;
+    }
+
+    .descuento {
+        font-size: 25px;
+    }
+
+    .navegacion {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navegacion ul {
+        display: flex;
+        margin: auto;
+    }
+
+    .navegacion ul li {
+        margin: 15px;
+        text-decoration: none;
+        list-style: none;
+
+    }
+
+    .navegacion ul li a {
+        text-decoration: none;
+        margin: 4px;
+        font-size: 20px;
+    }
+
+    header {
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    .logo-buscador {
+        display: flex;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .buscador p input {
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .buscador p button {
+        font-size: 20px;
+        border-radius: 5px;
+
+    }
+
+    footer p {
+        font-size: 20px;
+    }
+
+    .logo {
+        display: flex;
+        text-align: center;
+        align-items: normal;
+        margin: 0 auto;
+        width: 20%;
+        margin: 0 auto;
+        margin-left: 10px;
+    }
+
+    .buscador {
+        display: flex;
+        width: 30%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .text-center2 {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .footer-datos {
+        display: flex;
+    }
+
+    .alinear-texto-footer {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/headPartial.ejs") %> <!-- incova otra parte de un html aca, para poder repetir codigo -->
+</head>
+
+<body class="body-login">
+    <header class="header-home">
+        <%- include('../partials/headerPartial.ejs') %>
+    </header>
+    <main>
+        <form class="formFormulario" action="" method="POST" id="form">
+            <div class="form">
+                <h1>Registrarse</h1>
+                <div class="grupo">
+                    <input class="inputForm" type="text" name="nombre" id="nombre" required><span class="barra"></span>
+                    <label for="nombre">Nombre y apellido</label>
+                </div>
+                <div class="grupo">
+                    <input class="inputForm" type="text" name="usuario" id="usuario" minlength="6" required><span
+                        class="barra"></span>
+                    <label for="usuario">Usuario</label>
+
+                </div>
+                <div class="grupo">
+                    <input class="inputForm" type="password" name="password" id="password" minlength="8" required><span
+                        class="barra"></span>
+                    <label for="password">Contraseña</label>
+                </div>
+                <div class="grupo">
+                    <input class="inputForm" type="password" name="password2" id="password2" minlength="8" required><span
+                        class="barra"></span>
+                    <label for="password2">Confirmar contraseña</label>
+                </div>
+                <div class="grupo">
+                    <input class="inputForm" type="email" name="email" id="email" required><span class="barra"></span>
+                    <label for="email">Email</label>
+                </div>
+                <div class="grupo">
+                    <input class="inputForm" type="number" name="telefono" id="telefono" required><span class="barra"></span>
+                    <label for="telefono">Telefono</label>
+                </div>
+                <div class="grupo">
+                    <p>Fecha de nacimiento</p>
+                    <input class="inputForm" type="date" name="fecha" id="fecha" required><span class="barra"></span>
+                    <label for="fecha"></label>
+                </div>
+                <div>
+                    <p>Foto de perfil</p>
+                    <input type="file" name="avatar" accept=".jpg">
+                </div>
+                <div class="grupo">
+                    <input class="inputForm" type="text" name="domicilio" id="domicilio" required><span class="barra"></span>
+                    <label for="domicilio">Domicilio</label>
+                </div>
+                <div class="grupo">
+                   <p>Perfil del usuario</p>
+                   <input type="radio" name="pefil-usuario" value="Comprador">Comprador
+                   <input type="radio" name="pefil-usuario" value="Vendedor">Vendedor
+                </div>
+                <div class="grupo-check">
+                    <p>Intereses</p>
+                    <div id="checkboxes">
+                        <li> <input type="checkbox" name="intereses" value="Electro">Electro</li>
+                        <li> <input type="checkbox" name="intereses" value="Moda">Moda</li>
+                        <li> <input type="checkbox" name="intereses" value="Hogar">Hogar</li>
+                        <li> <input type="checkbox" name="intereses" value="Jugueteria">Juguetería</li>
+                        <li> <input type="checkbox" name="intereses" value="vida-sana">Vida sana</li>
+                  </ul>
+                </div>
+
+               
+                <button class="boton-ingresar" type='submit'>Enviar</button>
+                 <button class="boton-borrar" type="reset">Borrar</button>
+            </div>
+            </button>
+        </form>
+    </main>
+    <footer>
+        <%- include('../partials/footerPartial.ejs')  %>
+    </footer>
+</body>
+
+</html>

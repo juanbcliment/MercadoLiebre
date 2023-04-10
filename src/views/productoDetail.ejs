@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/headPartial.ejs") %>
+</head>
+
+<body class="body-detail">
+    <header class="header-home">
+        <%- include('./partials/headerPartial.ejs') %>
+    </header>
+    <div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Detalle del producto: NOMBRE DEL PRODUCTO</h2>
+			</div>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+				<div class="col-12 col-lg-8">
+					<img src="/img/products/<%= producti.image %>" alt="product image" class="product-detail-img">
+					<p class="product-detail-description">
+						<%= producti.description  %>
+					</p>
+				</div>
+				<div class="col-12 col-lg-4">
+					<article class="product-detail-info">
+						<h2 class="product-detail-title"><%= producti.name %></h2>
+						
+							<p class="product-detail-price small">
+								<span>$ <%= toThousand(producti.price)  %></span>
+								/
+								<b><%= producti.discount %> OFF</b>
+							</p>
+							<p class="product-detail-price">
+								$ <%= toThousand(producti.price - (producti.price*producti.discount/100))  %>
+							</p>
+							
+
+						<ul class="actions-list">
+							<li>
+								<i class="fas fa-credit-card"></i>
+								<p>Pagá en 12 cuotas sin interes</p>
+							</li>
+							<li>
+								<i class="fas fa-store"></i>
+								<p>Retiro gratis en locales del vendedor</p>
+							</li>
+						</ul>
+
+						<a href="#" class="buy-now-button">COMPRAR AHORA</a>
+						<hr>
+
+						<a href="/products/edit/<%= producti.id  %>" class="action-button edit">EDITAR PRODUCTO</a>
+						<form action="/products/delete/<%= producti.id  %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                                                <!-- MUY IMPORTANTE CUANDO VAMOS A UTILIXAR UN METOD DE ELIMINCACION DE ESCRIBE AL FINAL DE URL
+                                                                EL METHODO QUE SE ESTA UTILIXANDO ?_method=DELETE  -->
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+    
+
+            <!-- en los cochetes le mandamos los parametros que queremos para ese ejs -->
+                 <!-- para mostrar una lista de productos, creamos una ejs, con las visa de como queres que se vean los datos
+       en este casa procucti,  hacemos un ciclo ford invocando al array de objetos, que en este caso esta en main controller, pero proximamente en un mysql
+       que seria el productos1, y con el producti, es el  nombre que le dimos al objeto en del ejs de productosVista -->
+
+        <footer>
+            <%- include('./partials/footerPartial.ejs')  %>
+        </footer>
+   
+</body>
+
+</html>
