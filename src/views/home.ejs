@@ -16,7 +16,7 @@
     <h2 class="h2-titulo">Sección: Basado en su última visita</h2>
     <section class="productos">
       
-      <% for (product of productos1){ %><!-- productos 1 sale por el momento de mainController -->
+      <% for (product of visited){ %><!-- productos 1 sale por el momento de mainController -->
         <article class="article-productos">
           <img class="foto-producto" src="/img/products/<%= product.image %>" alt="Cafetera Moulinex">
           <div class="caja-descripcion">
@@ -34,7 +34,7 @@
       <h2 class="h2-titulo">Sección de Ofertas</h2>
       <section class="productos">
         
-        <% for (producti of productos1){ %>
+        <% for (producti of inSale){ %>
           <article class="article-productos">
             <%- include("./productVista.ejs", {producti})  %>
           </article><!-- en los cochetes le mandamos los parametros que queremos para ese ejs -->

@@ -26,7 +26,7 @@ const productController = require('../controllers/productsController') // los co
 
 router.get('/', productController.index)
 router.get('/detail/:id', productController.detail)//el : permite que se cree cualuiqer cantidad de rutas con los id del producto
-
+router.get('/ofertas', productController.oferta)
 //CREACION DE UN PRODUCTO necesita dos rutas, una de la vista, para poder interactuar, y otra de que manda los datos al servidor
 router.get('/create', productController.create)
 router.post('/', upload.single('productImage'), productController.store)
@@ -39,6 +39,6 @@ router.delete('/:id', productController.delete)
 
 
 
-router.get('/autos', productController.autos)
+
 router.get('/aviones', productController.aviones)
 module.exports = router// ahora exportamos el archivo 

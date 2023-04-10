@@ -20,9 +20,9 @@
     {
         "id": 3,
         "name": "Samsung Galaxy S10",
-        "price": 72999,
-        "discount": 25,
-        "category": "in-sale",
+        "price": "79999",
+        "discount": "10",
+        "category": "",
         "description": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
         "image": "img-samsung-galaxy-s10.jpg"
     },
@@ -146,8 +146,8 @@
     {
         "id": 17,
         "name": " Teclado HyperX Alloy Origins",
-        "price": "41169",
-        "discount": "10",
+        "price": 41169,
+        "discount": 10,
         "category": "in-sale",
         "description": "Este teclado HyperX de alto rendimiento permite que puedas disfrutar de horas ilimitadas de juegos. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo. Podrás mejorar tu experiencia de gaming, ya seas un aficionado o todo un experto y hacer que tus jugadas alcancen otro nivel.",
         "image": "img-1681073456033.jpg"

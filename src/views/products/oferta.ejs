@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <%- include("../partials/headPartial.ejs") %> <!-- incova otra parte de un html aca, para poder repetir codigo -->
+  
+</head>
+
+<body class="body-home">
+  <header class="header-home">
+    <%- include('../partials/headerPartial.ejs') %>
+  </header>
+  <main class="main-home">
+
+   
+      <h2 class="h2-titulo">Sección de Ofertas</h2>
+      <section class="productos">
+        
+        <% for (producti of inSale){ %>
+          <article class="article-productos">
+            <%- include("../productVista.ejs", {producti})  %>
+          </article><!-- en los cochetes le mandamos los parametros que queremos para ese ejs -->
+          <% } %> <!-- para mostrar una lista de productos, creamos una ejs, con las visa de como queres que se vean los datos
+            en este casa procucti,  hacemos un ciclo ford invocando al array de objetos, que en este caso esta en main controller, pero proximamente en un mysql
+            que seria el productos1, y con el producti, es el  nombre que le dimos al objeto en del ejs de productosVista -->
+            
+            
+          </section>
+        </main>
+
+  
+  <footer>
+    <%- include('../partials/footerPartial.ejs')  %>
+  </footer>
+</body>
+
+</html>

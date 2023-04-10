@@ -7,14 +7,16 @@ const producta = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 //convierte de numeros yankis a numer arg
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-
+const inSale = producta.filter(function(product){
+    return product.category == 'in-sale'
+})
 
 const productController = {
     index: (req, res) => {
-        res.render('productos.ejs', { title: 'Productos', productos1: producta, toThousand })
+        res.render('productos.ejs', { title: 'Productos',productos1: producta ,   toThousand })
     },                                                   //al escribir productos1, le puedo cambiar el nombre de como mando el array
-    autos: (req, res) => {
-        return res.send('LEGGASTE AL autos')
+    oferta: (req, res) => {
+        res.render('products/oferta.ejs',{ title: 'Ofertas', inSale: inSale, toThousand})
 
     },
     aviones: (req, res) => {
@@ -47,13 +49,35 @@ const productController = {
 
     //EDITAR PRODUCTO
     edit: (req, res) => {
+        const producti = producta.find(oneProduct => oneProduct.id == req.params.id)
+        res.render('products/productEdit.ejs', { title: 'Editando ' + producti.name, producti, toThousand })
 
     },
     update: (req, res) => {
-
+        console.log(req.file)
+        console.log(req.body)
+        let id = req.params.id
+        let productEdit = producta.find(product => product.id == id)
+        productEdit = {
+            id: productEdit.id,
+            ...req.body,
+            image: productEdit.image
+        }
+       let editProduct = producta.map(product =>{
+        if(product.id == productEdit.id){
+            return product = {...productEdit}
+        }
+        return product
+       })
+       fs.writeFileSync(productsFilePath, JSON.stringify(editProduct, null, ''))
+       res.redirect('/productos/detail/'+id)
     },
     delete: (req, res) => {
-
+        let id = req.params.id
+        let eliminarProducto = producta.filter(product => product.id != id)
+        fs.writeFileSync(productsFilePath, JSON.stringify(eliminarProducto, null, ''))
+        res.redirect('/productos/')
+     
     },
 
 

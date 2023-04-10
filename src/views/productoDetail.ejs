@@ -12,7 +12,7 @@
     <div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Detalle del producto: NOMBRE DEL PRODUCTO</h2>
+				<h2 class="products-title">Detalle del producto: <%= producti.name %></h2>
 			</div>
 		</div>
 		<div class="product-detail">
@@ -30,7 +30,7 @@
 							<p class="product-detail-price small">
 								<span>$ <%= toThousand(producti.price)  %></span>
 								/
-								<b><%= producti.discount %> OFF</b>
+								<b><%= producti.discount %>% OFF</b>
 							</p>
 							<p class="product-detail-price">
 								$ <%= toThousand(producti.price - (producti.price*producti.discount/100))  %>
@@ -51,8 +51,8 @@
 						<a href="#" class="buy-now-button">COMPRAR AHORA</a>
 						<hr>
 
-						<a href="/products/edit/<%= producti.id  %>" class="action-button edit">EDITAR PRODUCTO</a>
-						<form action="/products/delete/<%= producti.id  %>?_method=DELETE" method="POST" style="display: inline-flex">
+						<a href="/productos/<%= producti.id  %>" class="action-button edit">EDITAR PRODUCTO</a>
+						<form action="/productos/<%=producti.id %>?_method=DELETE" method="POST" style="display: inline-flex">
                                                                 <!-- MUY IMPORTANTE CUANDO VAMOS A UTILIXAR UN METOD DE ELIMINCACION DE ESCRIBE AL FINAL DE URL
                                                                 EL METHODO QUE SE ESTA UTILIXANDO ?_method=DELETE  -->
 							<button type="submit" class="action-button delete">ELIMINAR</button>
