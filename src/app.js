@@ -29,6 +29,11 @@ app.use(express.urlencoded({extended: false}));
 //transforma los datos que recive en json, usar json dentro de los archivos
 app.use(express.json());
 
+
+
+/* ====================  MiddleWare  ===================================== */
+const logMiddleware = require('./middlewares/logMiddleware') 
+app.use(logMiddleware)
 /* ===================  Routing  =======================================*/
 // estamos requiendo el archivo que tiene nuestra ruta en la carpeta routers
 const mainRoutes = require('./routers/main')

@@ -151,5 +151,14 @@
         "category": "in-sale",
         "description": "Este teclado HyperX de alto rendimiento permite que puedas disfrutar de horas ilimitadas de juegos. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo. Podrás mejorar tu experiencia de gaming, ya seas un aficionado o todo un experto y hacer que tus jugadas alcancen otro nivel.",
         "image": "img-1681073456033.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Zapatilla",
+        "price": "60000",
+        "discount": "",
+        "category": "visited",
+        "description": "Nike\r\n",
+        "image": "default-image.png"
     }
 ]

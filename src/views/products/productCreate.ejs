@@ -20,11 +20,19 @@
                 <div class="row product-detail">
                     <div class="col-12 col-md-6">
                         <label for="name" class="form-label">Nombre del producto:</label>
-                        <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
+                        <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input"
+                        value=<%= locals.oldData && oldData.name !== undefined ? oldData.name : ''%>>
+                         <div>
+                            <%= locals.errors && errors.name !== undefined ? errors.name.msg : ''%>
+                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <label for="price" class="form-label">Precio del producto:</label>
-                        <input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+                        <input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input"
+                        value=<%= locals.oldData && oldData.price !== undefined ? oldData.price : ''%>>
+                        <div>
+                            <%= locals.errors && errors.price !== undefined ? errors.price.msg: ''%>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <label for="discount" class="form-label">Descuento:</label>
@@ -46,6 +54,9 @@
                     <div class="col-12">
                         <label for="description" class="form-label">Descipción:</label>
                         <textarea name="description" id="description" class="form-input"></textarea>
+                        <div>
+                            <%= locals.errors && errors.description !== undefined ? errors.description.msg: ''%>
+                        </div>
                     </div>
                     <div class="col-12">
                         <button type="submit" class="buy-now-button">Guardar producto</button>

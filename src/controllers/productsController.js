@@ -1,5 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+/* ========================== Express-Validator =================== */
+const {validationResult} = require('express-validator')
+
+
 
 const productsFilePath = path.join(__dirname, '../database/products.json');// le indicamos donde esta el archivo json
 const producta = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -7,6 +11,7 @@ const producta = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 //convierte de numeros yankis a numer arg
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+/* filtramos los productos con las categorias que deseamos y lo mandamos a ofertas */
 const inSale = producta.filter(function(product){
     return product.category == 'in-sale'
 })
@@ -23,27 +28,32 @@ const productController = {
         return res.send('LEGGASTE AL AVIONES')
 
     },
-
-
     //CREACION DE UN PRODUCTO
     create: (req, res) => {
         res.render('products/productCreate.ejs', { title: 'Crear' })
     },
     store: (req, res) => {
-        console.log(req.file)
-        console.log(req.body)
-        let newProduct = {
-            id: producta[producta.length - 1].id + 1,
-            name: req.body.name,
-            price: req.body.price,
-            discount: req.body.discount,
-            category: req.body.category,
-            description: req.body.description,
-            image: req.file? req.file.filename : 'default-image.png'
+        let errors = validationResult(req)
+        if(!errors.isEmpty()){
+            let oldData = req.body
+            return res.render('products/productcreate.ejs', {errors: errors.mapped(), oldData}) 
         }
-        producta.push(newProduct)
-        fs.writeFileSync(productsFilePath, JSON.stringify(producta, null, ''))
-           /* convertimos el array en formato json y la pusheamos a la database */
+        else {
+            console.log(req.file)
+            console.log(req.body)
+            let newProduct = {
+                id: producta[producta.length - 1].id + 1,
+                name: req.body.name,
+                price: req.body.price,
+                discount: req.body.discount,
+                category: req.body.category,
+                description: req.body.description,
+                image: req.file? req.file.filename : 'default-image.png'
+            }
+            producta.push(newProduct)
+            fs.writeFileSync(productsFilePath, JSON.stringify(producta, null, ''))
+        }/* convertimos el array en formato json y la pusheamos a la database */ 
+           
         res.redirect('/')
     },
 
@@ -57,18 +67,21 @@ const productController = {
         console.log(req.file)
         console.log(req.body)
         let id = req.params.id
+        /* pedimos que encuentro el producto con el mismo id */
         let productEdit = producta.find(product => product.id == id)
         productEdit = {
-            id: productEdit.id,
-            ...req.body,
+            id: productEdit.id,//lo dejamos con el mismo id e imagen
+            ...req.body,//manda todos los cambios que hicimos en el body, en vez de escribir uno por uno
             image: productEdit.image
         }
+        //le pedimos que encuentro el objeto con el mimo ide y le retornamos el nuevo objeto con las modificaciones
        let editProduct = producta.map(product =>{
         if(product.id == productEdit.id){
             return product = {...productEdit}
         }
         return product
        })
+       //fs.write es como mandarle un push al json con las nuevas modificaciones
        fs.writeFileSync(productsFilePath, JSON.stringify(editProduct, null, ''))
        res.redirect('/productos/detail/'+id)
     },

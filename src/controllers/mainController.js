@@ -6,6 +6,8 @@ const productsFilePath = path.join(__dirname, '../database/products.json');
 const producta = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 //convierte de numeros yankis a numer arg
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+/* filtramos los productos con la categoria que deaseamos y la mandamos al home */
 const visited = producta.filter(function(product){
     return product.category == 'visited'
 })
