@@ -1,0 +1,52 @@
+[
+    {
+        "nombre": "Pepe Argento",
+        "usuario": "moni",
+        "password": "123456",
+        "password_confirm": "123456",
+        "email": "pepe@gmail.com",
+        "telefono": "1212442543423",
+        "nacimientoFecha": "2023-04-14",
+        "domicilio": "1231saf23fwdf3",
+        "pefil-usuario": "Vendedor",
+        "intereses": "Electro"
+    },
+    {
+        "nombre": "Pepe Argent",
+        "usuario": "mama",
+        "password": "$2a$10$ViD/AWgozt/pwABv85zgP.VYPV4rsqzRCVLOy9NAXWHmO6JUcFwAC",
+        "password_confirm": "123456",
+        "email": "moni@gmail.com",
+        "telefono": "12413414",
+        "nacimientoFecha": "2023-04-25",
+        "domicilio": "1231saf23fwdf3",
+        "pefil-usuario": "Comprador",
+        "intereses": "Hogar"
+    },
+    {
+        "nombre": "24fdsfd",
+        "usuario": "q23rwef",
+        "password": "$2a$10$Qko0LpU9n0qbMSGTC9lDv.Bh0R10B5angio5wQayz4ALXbvk/IZfi",
+        "password_confirm": "123456",
+        "email": "asdas@gmail.com",
+        "telefono": "25323414124",
+        "nacimientoFecha": "2023-04-03",
+        "domicilio": "1231saf23fwdf3",
+        "pefil-usuario": "Vendedor",
+        "intereses": "Jugueteria",
+        "image": "default-avatar.png"
+    },
+    {
+        "nombre": "Pepe Argento",
+        "usuario": "3424",
+        "password": "$2a$10$CR.382yZAKSeffdvEyEc.ug5FsJudZTL855.1VUBbUuPpW5nubUSe",
+        "password_confirm": "25235252",
+        "email": "2525235235@gmail.com",
+        "telefono": "23453454534",
+        "nacimientoFecha": "2023-04-12",
+        "domicilio": "1231saf23fwdf3",
+        "pefil-usuario": "Comprador",
+        "intereses": "Moda",
+        "image": "img-1681678628210.jpg"
+    }
+]

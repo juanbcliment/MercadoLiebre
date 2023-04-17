@@ -49,5 +49,5 @@ router.delete('/:id', productController.delete)
 
 
 
-router.get('/aviones', productController.aviones)
+
 module.exports = router// ahora exportamos el archivo 

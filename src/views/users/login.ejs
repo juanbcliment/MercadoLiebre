@@ -10,17 +10,21 @@
         <%- include('../partials/headerPartial.ejs') %>
     </header>
     <main>
-        <form class="formFormulario" action="" method="POST" id="form">
+        <form class="formFormulario" action="/user/login" method="POST" id="form">
             <div class="form">
                 <h1 class="h1-login">Ingresar</h1>
                 <div class="grupo">
-                    <input class="inputForm" type="text" name="" id="name" required><span class="barra"></span>
-                    <label for="">Nombre o Email</label>
+                    <input class="inputForm" type="text" name="email" id="name" required><span class="barra"></span>
+                    <label for="">Email</label>
                 </div>
                 <div class="grupo">
-                    <input class="inputForm" type="password" name="" id="name" minlength="8" required><span
+                    <input class="inputForm" type="password" name="password" id="name"  required><span
                         class="barra"></span>
                     <label for="">Contraseña</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="recordame">
+                    <label for="recordame">Recordame</label>
                 </div>
                 <button class="boton-ingresar" type="submit">Ingresar</button>
             </div>

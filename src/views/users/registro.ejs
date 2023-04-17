@@ -10,49 +10,78 @@
         <%- include('../partials/headerPartial.ejs') %>
     </header>
     <main>
-        <form class="formFormulario" action="" method="POST" id="form">
+        <form class="formFormulario" action="/user/registro/" method="POST" id="form" enctype="multipart/form-data">
             <div class="form">
                 <h1>Registrarse</h1>
                 <div class="grupo">
-                    <input class="inputForm" type="text" name="nombre" id="nombre" required><span class="barra"></span>
+                    <input class="inputForm" type="text" name="nombre" id="nombre" required  
+                    value=<%= locals.oldData && oldData.nombre !== undefined ? oldData.nombre : ''%>><span class="barra"></span>
                     <label for="nombre">Nombre y apellido</label>
+                    <div>
+                        <%= locals.errors && errors.nombre !== undefined ? errors.nombre.msg : ''%>
+                    </div>
                 </div>
                 <div class="grupo">
-                    <input class="inputForm" type="text" name="usuario" id="usuario" minlength="6" required><span
-                        class="barra"></span>
+                    <input class="inputForm" type="text" name="usuario" id="usuario" required
+                    value=<%= locals.oldData && oldData.usuario !== undefined ? oldData.usuario : ''%>><span class="barra"></span>
                     <label for="usuario">Usuario</label>
-
+                    <div>
+                        <%= locals.errors && errors.usuario !== undefined ? errors.usuario.msg : ''%>
+                    </div>
                 </div>
                 <div class="grupo">
-                    <input class="inputForm" type="password" name="password" id="password" minlength="8" required><span
-                        class="barra"></span>
+                    <input class="inputForm" type="password" name="password" id="password"  required 
+                    value=<%= locals.oldData && oldData.password !== undefined ? oldData.password : ''%>><span class="barra"></span>
                     <label for="password">Contraseña</label>
+                    <div>
+                        <%= locals.errors && errors.password !== undefined ? errors.password.msg : ''%>
+                    </div>
                 </div>
                 <div class="grupo">
-                    <input class="inputForm" type="password" name="password2" id="password2" minlength="8" required><span
+                    <input class="inputForm" type="password_confirm" name="password_confirm" id="password_confirm"  required
+                    value=<%= locals.oldData && oldData.passwordDos !== undefined ? oldData.passwordDos : ''%>><span
                         class="barra"></span>
-                    <label for="password2">Confirmar contraseña</label>
+                    <label for="password_confirm">Confirmar contraseña</label>
+                    <div>
+                        <%= locals.errors && errors.passwordDos !== undefined ? errors.passwordDos.msg : ''%>
+                    </div>
                 </div>
                 <div class="grupo">
-                    <input class="inputForm" type="email" name="email" id="email" required><span class="barra"></span>
+                    <input class="inputForm" type="email" name="email" id="email" required 
+                    value=<%= locals.oldData && oldData.email !== undefined ? oldData.email : ''%>><span class="barra"></span>
                     <label for="email">Email</label>
+                    <div>
+                        <%= locals.errors && errors.email !== undefined ? errors.email.msg : ''%>
+                    </div>
                 </div>
                 <div class="grupo">
-                    <input class="inputForm" type="number" name="telefono" id="telefono" required><span class="barra"></span>
+                    <input class="inputForm" type="number" name="telefono" id="telefono" required
+                    value=<%= locals.oldData && oldData.telefono !== undefined ? oldData.telefono : ''%>><span class="barra"></span>
                     <label for="telefono">Telefono</label>
+                    <div>
+                        <%= locals.errors && errors.telefono !== undefined ? errors.telefono.msg : ''%>
+                    </div>
                 </div>
                 <div class="grupo">
                     <p>Fecha de nacimiento</p>
-                    <input class="inputForm" type="date" name="fecha" id="fecha" required><span class="barra"></span>
-                    <label for="fecha"></label>
+                    <input class="inputForm" type="date" name="nacimientoFecha" id="nacimientoFecha" required 
+                    value=<%= locals.oldData && oldData.nacimientoFecha !== undefined ? oldData.nacimientoFecha : ''%>><span class="barra"></span>
+                    <label for="nacimientoFecha"></label>
+                    <div>
+                        <%= locals.errors && errors.nacimientoFecha !== undefined ? errors.nacimientoFecha.msg : ''%>
+                    </div>
                 </div>
                 <div>
-                    <p>Foto de perfil</p>
+                    <label for="image" class="form-label">Foto de perfil:</label>
                     <input type="file" name="avatar" accept=".jpg">
                 </div>
                 <div class="grupo">
-                    <input class="inputForm" type="text" name="domicilio" id="domicilio" required><span class="barra"></span>
+                    <input class="inputForm" type="text" name="domicilio" id="domicilio" required 
+                    value=<%= locals.oldData && oldData.domicilio !== undefined ? oldData.domicilio : ''%>><span class="barra"></span>
                     <label for="domicilio">Domicilio</label>
+                    <div>
+                        <%= locals.errors && errors.domicilio !== undefined ? errors.domicilio.msg : ''%>
+                    </div>
                 </div>
                 <div class="grupo">
                    <p>Perfil del usuario</p>

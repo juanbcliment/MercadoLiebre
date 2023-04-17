@@ -24,10 +24,6 @@ const productController = {
         res.render('products/oferta.ejs',{ title: 'Ofertas', inSale: inSale, toThousand})
 
     },
-    aviones: (req, res) => {
-        return res.send('LEGGASTE AL AVIONES')
-
-    },
     //CREACION DE UN PRODUCTO
     create: (req, res) => {
         res.render('products/productCreate.ejs', { title: 'Crear' })
@@ -97,10 +93,9 @@ const productController = {
     detail: (req, res) => {
         const producti = producta.find(oneProduct => oneProduct.id == req.params.id)//en la variablre product, hago que busque en el array de productos, un producto que su id sea igual al id que viene en el parametro de la ruta
         res.render('productoDetail.ejs', { title: 'Producto', producti, toThousand })
-    },                                                       //aca le estoy mandando el nombre del array a la vista de detail
+    }                                                       //aca le estoy mandando el nombre del array a la vista de detail
     //tambien le pondria mandar otro nombre poniendo el nombre y dos puntos adelante
-    login: function () { }
-
+   
 
 
 }

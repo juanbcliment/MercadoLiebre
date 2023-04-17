@@ -29,7 +29,17 @@ app.use(express.urlencoded({extended: false}));
 //transforma los datos que recive en json, usar json dentro de los archivos
 app.use(express.json());
 
+/* ========================  Session y Cookies  ============================ */
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
 
+app.use(session({
+    secret: 'Secreto!',
+    resave: false,
+    saveUnitialized: true
+
+}))
+app.use(cookieParser())
 
 /* ====================  MiddleWare  ===================================== */
 const logMiddleware = require('./middlewares/logMiddleware') 
