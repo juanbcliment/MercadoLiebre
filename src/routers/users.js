@@ -5,7 +5,8 @@ const userController = require('../controllers/usersController')// los controlle
 //son los que controlan la ruta, desde la imagen que va a llevar, hasta las funciones que qures que hago, por eso se invocan
 //los controller son objetos por eso se usa el . despues del nombre
 
-const adminMiddleware = require('../middlewares/admin')
+const guestMW = require('../middlewares/guestMW')
+const authMW = require('../middlewares/authMW')
 /* =========================Express-Vaildator========================= */
 
 const { check } = require('express-validator')
@@ -27,8 +28,9 @@ var storage = multer.diskStorage({
     const upload = multer({storage})
 
 
-router.get('/login', userController.index)
+router.get('/login', guestMW, userController.index)
 router.post('/login', userController.login)
+router.get('/logout', userController.logout)
 
 router.get('/registro', userController.register)
 router.post('/registro', upload.single('avatar'), [
@@ -40,4 +42,9 @@ router.post('/registro', upload.single('avatar'), [
     check('telefono').isLength({min:1}).withMessage('Debe ingresar un nombre'),
     check('nacimientoFecha').isLength({min:1}).withMessage('Debe ingresar un nombre'),
 ], userController.store )
+router.get('/cheakuser', userController.cheak)
+
+router.get('/profile',authMW, userController.profile)
+router.get('/carrito',authMW, userController.carrito)
+router.get('/deseos',authMW, userController.deseos)
 module.exports = router // ahora exportamos el archivo 

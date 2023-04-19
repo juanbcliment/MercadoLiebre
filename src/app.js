@@ -40,7 +40,10 @@ app.use(session({
 
 }))
 app.use(cookieParser())
-
+const recordameMiddleware = require('./middlewares/recordameMiddleware')// recordame permite que si hay una cooki vuelva a iniciar session de usuario
+app.use(recordameMiddleware)
+const userLoggedMidleware = require('./middlewares/userLoggerMiddleware')
+app.use(userLoggedMidleware)
 /* ====================  MiddleWare  ===================================== */
 const logMiddleware = require('./middlewares/logMiddleware') 
 app.use(logMiddleware)

@@ -11,6 +11,13 @@
     </div>
     <p class="text-center2"><i class="fas fa-hand-holding-usd"></i> compra en cuotas sin tarjeta
         de credito</p>
+        <div class="nombre-logeado">
+        <% if (locals.currentUser) { %>
+            <li class="login_toggle"><a class="account-item" href="/user/profile"><span><%=currentUser.nombre%></span><i class="fa-solid fa-circle-user"></i></a>
+        <% } else { %>
+            <li><a class="account-item" href="/user/login"><span>INGRESAR</span><i class="fa-solid fa-circle-user"></i></a></li>
+        <% } %>
+    </div>
 </div>
 <nav class="navegacion">
     <ul>

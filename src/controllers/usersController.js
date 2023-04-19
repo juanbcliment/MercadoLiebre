@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../database/userDatabase.json');
-const users = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const usersFilePath = path.join(__dirname, '../database/userDatabase.json');
+const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 /* ========================== Express-Validator =================== */
 const {validationResult} = require('express-validator')
@@ -14,11 +14,17 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const usersController = {
     index:(req,res) =>{
-        res.render('users/login', {})  
+        
+        res.render('users/login',)  
         
         },
+        header: (req, res) => {
+            let currentUser = req.session.userLogged;
+         res.render('partials/headerPartial.ejs', {currentUser})
+        },
     register:(req,res) =>{
-         res.render('users/registro', {title: 'Registro'}) 
+        
+         res.render('users/registro', {title: 'Registro', }) 
         },
     store:  (req, res) => {
         console.log(req.body)
@@ -35,7 +41,7 @@ const usersController = {
             }
             console.log(newUser)
             users.push(newUser)
-            fs.writeFileSync(productsFilePath, JSON.stringify(users, null, ''))
+            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ''))
         }
         res.redirect('/user/login')
     },
@@ -47,14 +53,34 @@ const usersController = {
             if(isPasswordCorrect){
                 delete userLogin.password
                 delete userLogin.password_confirm
-                req.session.userLogged = userLogin
+                req.session.userLogged = userLogin/* userLogged lo elegimos nosotros al nombre */
                 if(req.body.recordame != undefined){
-                    res.cookie('recordame', req.session.userLogged.email, {maxAge: 100000})/* se guarda la session por 100seg */
+                    res.cookie('recordame', req.session.userLogged.email, {maxAge: 10000})/* se guarda la session por 100seg */
                 }
-                res.redirect('/')
+                res.redirect('/user/profile')
             }/* el session viene del requier en app.js */
         }
         
+    },
+    logout: (req, res) =>{
+    req.session.userLogged = undefined
+    res.redirect('/')
+    },
+    cheak: (req, res) => {
+        if(req.session.userLogged){
+
+            res.send('el usario logeado es ' + req.session.userLogged.nombre)
+        }
+        return res.send('No estas logeado')
+    },
+    profile: (req, res) => {
+        res.render('users/miCuenta')
+    },
+    carrito: (req, res) =>{
+       res.send('faltacrear la pagina')
+    },
+    deseos: (req, res) =>{
+        res.send('faltacrear la pagina')
     }
 
 
